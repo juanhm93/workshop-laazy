@@ -19,13 +19,13 @@ const random = () => Math.floor(Math.random() * (maximun - minimun)) + minimun
 const createImageNode = () => {
   const container = document.createElement('div');
   container.className = "p-4"
-  const imagen = document.createElement('img');
-  imagen.className = "mx-auto bg-purple-600";
-  imagen.style.minHeight = '150px'
-  imagen.width = '320';
-  imagen.dataset.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
+  const image = document.createElement('img');
+  image.className = "mx-auto bg-purple-600";
+  image.style.minHeight = '150px'
+  image.width = '320';
+  image.dataset.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
 
-  container.appendChild(imagen);
+  container.appendChild(image);
   return container;
 }
 

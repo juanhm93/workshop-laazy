@@ -6,10 +6,10 @@ const isIntersecting = (entry) => {
 }
 const loadImage = (entry) => {
   const container = entry.target; // el nodo es el div
-  const imagen = container.firstChild;
-  const url = imagen.dataset.src;
+  const image = container.firstChild;
+  const url = image.dataset.src;
   // load image
-  imagen.src = url;
+  image.src = url;
   // debugger
   // console.log('holis');
   // console.log(nodo.nodeName);
@@ -28,7 +28,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // crear funcion
 
-export const registerImage = (imagen) => {
-  //  intersectionObservador -> observer(imagen)
-  observer.observe(imagen)
+export const registerImage = (image) => {
+  //  intersectionObservador -> observer(image)
+  observer.observe(image)
 }
