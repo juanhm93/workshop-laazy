@@ -1,3 +1,4 @@
+import h from 'hyperscript';
 import { registerImage } from "./lazy";
 /**
  * This file is just a silly example to show everything working in the browser.
@@ -17,15 +18,22 @@ const maximun = 122;
 const random = () => Math.floor(Math.random() * (maximun - minimun)) + minimun 
 
 const createImageNode = () => {
-  const container = document.createElement('div');
-  container.className = "p-4"
-  const image = document.createElement('img');
-  image.className = "mx-auto bg-purple-600";
-  image.style.minHeight = '150px'
-  image.width = '320';
-  image.dataset.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
+  // const container = document.createElement('div');
+  // container.className = "p-4"
+ 
+  // const image = document.createElement('img');
+  // image.className = "mx-auto bg-purple-600";
+  // image.style.minHeight = '150px'
+  // image.width = '320';
+  // image.dataset.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
 
-  container.appendChild(image);
+  const image = h('img.mx-auto.bg-purple-600', {
+    width: '320',
+    'data-src':  `https://randomfox.ca/images/${random()}.jpg`, 
+  })
+
+  const container = h('div.p-4',image);
+  // container.appendChild(image);
   return container;
 }
 
